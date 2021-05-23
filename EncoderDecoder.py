@@ -11,7 +11,10 @@ def decode_timestamp(timestamp):
 
 # convert integer to string
 def encode_timestamp(timestamp):
-    return '{}{}'.format(int(timestamp/64), timestamp%64)
+    decode_keys = list(DECODE_DICT.keys())
+    first_letter = decode_keys[int(timestamp/64)]
+    second_letter = decode_keys[timestamp%64]
+    return '{}{}'.format(first_letter, second_letter)
 
 # encoding notes_list to encoded sheet
 def encode_notes_list(notes_list):
