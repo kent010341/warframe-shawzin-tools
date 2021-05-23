@@ -4,12 +4,14 @@
 This project is made for dealing with the encoding Shawzin sheet music in Warframe game.
 
 ## Files
-* Attributes.py
+* core/Attributes.py
   * Contains some constant variables used in other code.
-* EncoderDecoder.py
+* core/EncoderDecoder.py
   * Contains the encoder and decoder of timestamp and sheet music.
-* Sheet.py
-  * Contains two classes: Note and Sheet.
+* core/classes/Sheet.py
+  * Contains class `Sheet`.
+* core/classes/Note.py
+  * Contains class: `Note`.
 * SheetCombination.py
   * Contains two methods used for combining two sheets together.
 
