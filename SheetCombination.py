@@ -48,13 +48,13 @@ def multiple_sheet_combination(*sheets, time_between=6):
     if hasattr(time_between, '__iter__'):
         assert len(sheets)-1 == len(time_between), 'the length of time_between should be (number of sheets)-1'
     else:
-        time_between = list(range(len(sheets)-1))
+        time_between = [time_between for _ in range(len(sheets)-1)]
     i_time_between = 0
 
     sheet_output = sheets[0]
     for i, sheet in enumerate(sheets[1:]):
         try:
-            sheet_combination(sheet_output, sheet, time_between=time_between[i_time_between])
+            sheet_output = sheet_combination(sheet_output, sheet, time_between=time_between[i_time_between])
             i_time_between += 1
         except AssertionError as e:
             print('Exception occurs while processing multiple sheet combination.')
