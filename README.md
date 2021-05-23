@@ -14,6 +14,8 @@ This project is made for dealing with the encoding Shawzin sheet music in Warfra
   * Contains class: `Note`.
 * SheetCombination.py
   * Contains two methods used for combining two sheets together.
+* demo_sheet_combination.py
+  * demo of `sheet_combination` and `multiple_sheet_combination`.
 
 ---
 
