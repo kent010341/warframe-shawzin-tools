@@ -1,4 +1,4 @@
-from Attributes import DECODE_DICT
+from .Attributes import DECODE_DICT
 
 # convert string to integer
 def decode_timestamp(timestamp):
