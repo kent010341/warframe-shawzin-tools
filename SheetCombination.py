@@ -1,6 +1,7 @@
 from copy import deepcopy
+from Sheet import Sheet
 
-def sheet_combination(sheet1, sheet2, time_between=1):
+def sheet_combination(sheet1, sheet2, time_between=6):
     # the maximum of timestamp is 4095.
     # Check if it's greater than 4095 after adding.
     last_timestamp_sheet1 = sheet1.get_notes_list()[-1].get_timestamp()
@@ -39,3 +40,25 @@ def sheet_combination(sheet1, sheet2, time_between=1):
     sheet1.set_notes_list(notes_list1)
 
     return sheet1
+
+# provide multiple sheet combination
+def multiple_sheet_combination(*sheets, time_between=6):
+    sheet_output = _sheet_transform(sheets[0])
+    for i, sheet in enumerate(sheets[1:]):
+        sheet = _sheet_transform(sheet)
+        try:
+            sheet_combination(sheet_output, sheet, time_between=time_between)
+        except AssertionError as e:
+            print('Exception occurs while processing multiple sheet combination.')
+            print('stop at sheet index {}, error message: {}'.format(i+1, e))
+
+            break
+
+    return sheet_output
+
+# change string into sheet
+def _sheet_transform(sheet):
+    if isinstance(sheet, str):
+        sheet = Sheet(sheet)
+
+    return sheet
