@@ -1,5 +1,5 @@
 from copy import deepcopy
-from core.classes.Sheet import Sheet
+from .core.classes.Sheet import Sheet
 
 def sheet_combination(sheet1, sheet2, time_between=6):
     sheet1 = _sheet_transform(sheet1)

@@ -1,6 +1,5 @@
-from core.classes.Sheet import Sheet
-from SheetCombination import multiple_sheet_combination, sheet_combination
-from core.EncoderDecoder import decode_timestamp
+from WarframeShawzin import Sheet
+from WarframeShawzin import multiple_sheet_combination, sheet_combination
 
 # This sheet is from https://www.youtube.com/watch?v=TLnvusCgHWE
 canon_1 = '5hAAKAGSANhAUUAbKAiRAoUAvSA2EA9MBESBKRBSEBZKBgRBmMBuBB1JB8MCDKCKBCRECYKCeMCmKCsMCzJC6RDCMDJRDQKDXhDhKDpSDwhD2UD+KEFRENUEUSEbEEiMEpSEvRE3EE9KFERFLMFTBFaJFhMFnKFuBF1EF7KGCMGJKGPJGWMGeRGlMGsRG0KG8'
