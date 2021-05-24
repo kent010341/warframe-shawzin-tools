@@ -2,9 +2,9 @@
 
 ## Description
 This project is made for dealing with the encoding Shawzin sheet music in Warframe game.
-File start with `demo_` is the demos.
 
 ## Demo Files
+Files start with `demo_` are the demos.
 * demo_sheet_combination.py
   * demo of `sheet_combination` and `multiple_sheet_combination`.
 
