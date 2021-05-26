@@ -16,3 +16,16 @@ NOTE_DICT = {
     8: {'B': 'lC', 'C': 'lDb', 'E': 'lE', 'J': 'lF', 'K': 'lG', 'M': 'lAb', 'R': 'lBb', 'S': 'mC', 'U': 'mDb', 'h': 'mE', 'i': 'mF', 'k': 'mG'},
     9: {'B': 'lC#', 'C': 'lD#', 'E': 'lF#', 'J': 'lG#', 'K': 'lA#', 'M': 'mC#', 'R': 'mD#', 'S': 'mF#', 'U': 'mG#', 'h': 'mA#', 'i': 'hC#', 'k': 'hD#'}
 }
+
+# Scale Transform
+SCALE_DICT = {
+    1: 'Pentatonic Minor (1)',
+    2: 'Pentatonic Major (2)',
+    3: 'Chromatic (3)',
+    4: 'Hexatonic (4)',
+    5: 'Major (5)',
+    6: 'Minor (6)',
+    7: 'Hirajoshi (7)',
+    8: 'Phrygian (8)',
+    9: 'Yo (9)'
+}
