@@ -52,4 +52,4 @@ Files start with `demo_` are the demos.
 * `sheet_combination(*sheets, time_between=6)`
   * Combine multiple sheet music together, returning a `Sheet` object.
   * `*sheets` can be `str` or `Sheet` type.
-  * `time_between` is the time between two `Sheet`, it can be a iterable object with `int`s (like `tuple` or `list`), and its length should match the number of `*sheets`-1.
+  * `time_between` is the time between two `Sheet`, it can be an iterable object with `int`s (like `tuple` or `list`), and its length should match the number of `*sheets`-1.
