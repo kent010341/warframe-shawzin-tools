@@ -15,6 +15,10 @@ class Note:
         self._encoded_timestamp = note_code[1:]
         self._timestamp = decode_timestamp(self._encoded_timestamp)
 
+    def __str__(self):
+        return '{' + ('note: {}, timestamp: {}' \
+            .format(self._note, self._timestamp)) + '}'
+
     def to_string(self, scale):
         return '{' + ('note: {}, timestamp: {}' \
             .format(NOTE_DICT[scale][self._note], self._timestamp)) + '}'
