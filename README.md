@@ -30,10 +30,10 @@ Files start with `demo_` are the demos.
 * `set_notes_list(notes_list)`
   * Setter of list of notes (type of notes is `Note`).
   * `notes_list` should be a `list` of `Note` objects.
-* `get_tone()`
-  * Getter of `tone` which is the first character of the encoded sheet music.
-* `set_tone(tone)`
-  * Setter of `tone`. Must be 1 $\le$ `tone` $/le$ 9.
+* `get_scale()`
+  * Getter of `scale` which is the first character of the encoded sheet music.
+* `set_scale(scale)`
+  * Setter of `scale`. Must be 1 $\le$ `scale` $/le$ 9.
 * `get_encoded_sheet()`
   * Getter of encoded sheet.
 

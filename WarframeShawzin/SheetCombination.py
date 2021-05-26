@@ -34,10 +34,10 @@ def _combine_2_sheet(sheet1, sheet2, time_between=6):
         'Combination process failed, time length too long' + \
         ' (last timestamp = {})'.format(last_timestamp)
 
-    # Check if tone is the same
-    assert sheet1.get_tone() == sheet2.get_tone(), \
-        'tone of sheet1 ({}) is different from sheet2 ({})' \
-        .format(sheet1.get_tone(), sheet2.get_tone())
+    # Check if scale is the same
+    assert sheet1.get_scale() == sheet2.get_scale(), \
+        'scale of sheet1 ({}) is different from sheet2 ({})' \
+        .format(sheet1.get_scale(), sheet2.get_scale())
 
     # copy sheet
     notes_list1 = deepcopy(sheet1.get_notes_list())

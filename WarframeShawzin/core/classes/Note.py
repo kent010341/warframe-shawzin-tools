@@ -1,5 +1,5 @@
 from ..EncoderDecoder import decode_timestamp, encode_timestamp
-from ..Attributes import NOTE_LIST
+from ..Attributes import NOTE_LIST, NOTE_DICT
 
 class Note:
     def __init__(self, note_code):
@@ -18,6 +18,10 @@ class Note:
     def __str__(self):
         return '{' + ('note: {}, timestamp: {}' \
             .format(self._note, self._timestamp)) + '}'
+
+    def to_string(self, scale):
+        return '{' + ('note: {}, timestamp: {}' \
+            .format(NOTE_DICT[scale][self._note], self._timestamp)) + '}'
 
     # getter and setter
     def get_note(self):
