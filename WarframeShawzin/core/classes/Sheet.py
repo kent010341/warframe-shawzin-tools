@@ -1,4 +1,5 @@
 from ..EncoderDecoder import encode_notes_list
+from ..Attributes import SCALE_DICT
 from .Note import Note
 
 class Sheet:
@@ -18,9 +19,11 @@ class Sheet:
         self._parsing()
 
     def __str__(self):
-        output_str = 'scale: {}, notes: [\n'.format(self._scale)
+        output_str = 'scale: {}, notes: [\n'.format(SCALE_DICT[self._scale])
         for note in self._notes_list:
-            output_str += '{},\n'.format(str(note))
+            output_str += '{},\n'.format(note.to_string(self._scale))
+        # remove last comma
+        output_str = output_str[:-2] + '\n'
 
         return output_str + ']'
 
