@@ -1,7 +1,35 @@
 from copy import deepcopy
 from .core.classes.Sheet import Sheet
 
-def sheet_combination(sheet1, sheet2, time_between=6):
+# provide multiple sheet combination
+def sheet_combination(*sheets, time_between=6):
+    if hasattr(time_between, '__iter__'):
+        assert len(sheets)-1 == len(time_between), 'the length of time_between should be (number of sheets)-1'
+    else:
+        time_between = [time_between for _ in range(len(sheets)-1)]
+    i_time_between = 0
+
+    sheet_output = sheets[0]
+    for i, sheet in enumerate(sheets[1:]):
+        try:
+            sheet_output = _combine_2_sheet(sheet_output, sheet, time_between=time_between[i_time_between])
+            i_time_between += 1
+        except AssertionError as e:
+            print('Exception occurs while processing multiple sheet combination.')
+            print('stop at sheet index {}, error message: {}'.format(i+1, e))
+
+            break
+
+    return sheet_output
+
+# change string into sheet
+def _sheet_transform(sheet):
+    if isinstance(sheet, str):
+        sheet = Sheet(sheet)
+
+    return sheet
+
+def _combine_2_sheet(sheet1, sheet2, time_between=6):
     sheet1 = _sheet_transform(sheet1)
     sheet2 = _sheet_transform(sheet2)
     # the maximum of timestamp is 4095.
@@ -42,31 +70,3 @@ def sheet_combination(sheet1, sheet2, time_between=6):
     sheet1.set_notes_list(notes_list1)
 
     return sheet1
-
-# provide multiple sheet combination
-def multiple_sheet_combination(*sheets, time_between=6):
-    if hasattr(time_between, '__iter__'):
-        assert len(sheets)-1 == len(time_between), 'the length of time_between should be (number of sheets)-1'
-    else:
-        time_between = [time_between for _ in range(len(sheets)-1)]
-    i_time_between = 0
-
-    sheet_output = sheets[0]
-    for i, sheet in enumerate(sheets[1:]):
-        try:
-            sheet_output = sheet_combination(sheet_output, sheet, time_between=time_between[i_time_between])
-            i_time_between += 1
-        except AssertionError as e:
-            print('Exception occurs while processing multiple sheet combination.')
-            print('stop at sheet index {}, error message: {}'.format(i+1, e))
-
-            break
-
-    return sheet_output
-
-# change string into sheet
-def _sheet_transform(sheet):
-    if isinstance(sheet, str):
-        sheet = Sheet(sheet)
-
-    return sheet
