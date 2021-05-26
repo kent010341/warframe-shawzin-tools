@@ -3,6 +3,14 @@
 ## Description
 This project is made for dealing with the encoding Shawzin sheet music in Warframe game.
 
+---
+
+## Requirements
+* Python 3.6 or above
+* Numpy
+
+---
+
 ## Demo Files
 Files start with `demo_` are the demos.
 * demo_sheet_combination.py
@@ -53,3 +61,7 @@ Files start with `demo_` are the demos.
   * Combine multiple sheet music together, returning a `Sheet` object.
   * `*sheets` can be `str` or `Sheet` type.
   * `time_between` is the time between two `Sheet`, it can be an iterable object with `int`s (like `tuple` or `list`), and its length should match the number of `*sheets`-1.
+* `speed_changing(sheet, rate)`
+  * Changing speed of a sheet (making it faster is same as increasing its bpm).
+  * `sheet` can be `str` or `Sheet` type.
+  * `rate` can be `float` or `int`.
