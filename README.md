@@ -49,11 +49,7 @@ Files start with `demo_` are the demos.
   * timestamp must be `int` type which means decoded.
 
 ### Methods
-* `sheet_combination(sheet1, sheet2, time_between=6)`
-  * Combine two sheet music together, returning a `Sheet` object.
-  * `sheet1` and `sheet2` can be `str` or `Sheet` type.
-  * `time_between` is the time between `sheet1` and `sheet2`.
-* `multiple_sheet_combination(*sheets, time_between=6)`
+* `sheet_combination(*sheets, time_between=6)`
   * Combine multiple sheet music together, returning a `Sheet` object.
   * `*sheets` can be `str` or `Sheet` type.
   * `time_between` is the time between two `Sheet`, it can be a iterable object with `int`s (like `tuple` or `list`), and its length should match the number of `*sheets`-1.
