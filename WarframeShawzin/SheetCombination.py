@@ -1,5 +1,5 @@
 from copy import deepcopy
-from .core.classes.Sheet import Sheet
+from .core.Transform import sheet_transform
 
 # provide multiple sheet combination
 def sheet_combination(*sheets, time_between=6):
@@ -22,16 +22,9 @@ def sheet_combination(*sheets, time_between=6):
 
     return sheet_output
 
-# change string into sheet
-def _sheet_transform(sheet):
-    if isinstance(sheet, str):
-        sheet = Sheet(sheet)
-
-    return sheet
-
 def _combine_2_sheet(sheet1, sheet2, time_between=6):
-    sheet1 = _sheet_transform(sheet1)
-    sheet2 = _sheet_transform(sheet2)
+    sheet1 = sheet_transform(sheet1)
+    sheet2 = sheet_transform(sheet2)
     # the maximum of timestamp is 4095.
     # Check if it's greater than 4095 after adding.
     last_timestamp_sheet1 = sheet1.get_notes_list()[-1].get_timestamp()
