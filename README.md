@@ -37,6 +37,10 @@ Files start with `demo_` are the demos.
 * `get_encoded_sheet()`
   * Getter of encoded sheet.
 
+#### Indexing
+* `Sheet[index]`: return one `Note`.
+* `Sheet[start_i: end_i]`: return sliced sheet. 
+
 ### Class: Note
 > Currently only used in class `Sheet`. 
 #### Method
