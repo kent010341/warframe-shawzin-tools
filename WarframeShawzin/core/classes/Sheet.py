@@ -27,6 +27,18 @@ class Sheet:
 
         return output_str + ']'
 
+    def __getitem__(self, key):
+        # slicing
+        if isinstance(key, slice):
+            new_sheet = self.clone()
+            notes_list = new_sheet.get_notes_list()
+            notes_list = notes_list[key]
+            new_sheet.set_notes_list(notes_list)
+
+            return new_sheet
+        else:
+            return self._notes_list[key]
+
     # parsing sheet string
     def _parsing(self):
         for i in range(int(len(self._sheet_str)/3)):
