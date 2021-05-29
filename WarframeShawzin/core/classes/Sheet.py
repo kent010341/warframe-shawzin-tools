@@ -32,6 +32,10 @@ class Sheet:
         for i in range(int(len(self._sheet_str)/3)):
             self._notes_list.append(Note(self._sheet_str[i*3: i*3+3]))
 
+    # clone a new sheet obj
+    def clone(self):
+        return Sheet(self._encoded_sheet)
+
     # getter and setter
     def get_notes_list(self):
         return self._notes_list
