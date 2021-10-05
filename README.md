@@ -1,7 +1,7 @@
 # warframe-shawzin-tools Project
 
 ## Description
-This project is made for dealing with the encoding Shawzin sheet music in Warframe game.
+This project is made for dealing with the encoded Shawzin sheet music in Warframe game.
 
 ---
 
