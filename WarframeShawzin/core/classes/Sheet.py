@@ -12,8 +12,7 @@ class Sheet:
                 self._scale = int(self._encoded_sheet[0])
                 self._sheet_str = self._encoded_sheet[1:]
                 # check if scale is available
-                assert self._scale <= 9 and self._scale >= 1, \
-                    'scale should be an integer between 1 to 9'
+                assert self._scale != 0, 'scale can not be 0'
                 # check if sheet_str is multiple of 3
                 assert len(self._sheet_str)%3 == 0, 'sheet_str should be multiple of 3'
 
